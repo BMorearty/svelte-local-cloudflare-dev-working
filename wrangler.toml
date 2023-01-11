@@ -1,3 +1,10 @@
 name = "giftideas"
 compatibility_date = "2023-01-11"
 
+[env.dev]
+kv_namespaces = [
+    { binding = "GIFTS", id = "00345c55bb4044f5afd488bc5a527ed3" }
+]
+
+[env.prod]
+# Overrides here

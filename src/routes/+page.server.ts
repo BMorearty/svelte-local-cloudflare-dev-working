@@ -2,7 +2,7 @@ import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ platform }) => {
   return {
-    hello: platform?.env?.GIFTS.get('hello')
+    hello: platform?.env?.GIFTS.get('hello'),
   };
 };
 
@@ -13,5 +13,5 @@ export const actions: Actions = {
     if (hello) {
       await platform?.env?.GIFTS.put('hello', hello);
     }
-  }
+  },
 };

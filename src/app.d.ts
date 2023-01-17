@@ -9,5 +9,11 @@ declare namespace App {
     env?: {
       GIFTS: KVNamespace;
     };
+    context: {
+      // TODO: can we just do promise: any?
+      // waitUntil(promise: Promise<any>): void;
+      waitUntil(promise: any): void;
+    };
+    caches: CacheStorage & { default: Cache };
   }
 }

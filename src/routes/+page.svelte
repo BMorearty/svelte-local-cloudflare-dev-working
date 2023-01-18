@@ -8,7 +8,7 @@
 
 <h1>Welcome to SvelteKit</h1>
 <p>Data.hello is now {data.hello}</p>
-<form method="POST" use:enhance>
+<form method="POST">
   Change it to
   <input name="hello" bind:value={hello} type="text" />
   <input type="submit" />

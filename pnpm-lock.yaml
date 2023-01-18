@@ -10,6 +10,7 @@ specifiers:
   eslint: ^8.32.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-svelte3: ^4.0.0
+  miniflare: ^2.11.0
   nodemon: ^2.0.20
   prettier: ^2.8.3
   prettier-plugin-svelte: ^2.9.0
@@ -31,6 +32,7 @@ devDependencies:
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-svelte3: 4.0.0_tmo5zkisvhu6htudosk5k7m6pu
+  miniflare: 2.11.0
   nodemon: 2.0.20
   prettier: 2.8.3
   prettier-plugin-svelte: 2.9.0_kdmmghgdi3ngrsq6otxkjilbry

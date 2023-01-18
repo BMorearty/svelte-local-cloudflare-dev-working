@@ -1,6 +1,4 @@
 import type { Actions, PageServerLoad } from './$types';
-import { redirect } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
 
 export const load: PageServerLoad = async ({ platform }) => {
   console.log({platform});
@@ -16,16 +14,11 @@ export const load: PageServerLoad = async ({ platform }) => {
 
 export const actions: Actions = {
   default: async ({ platform, request }) => {
-    const promises = [];
-    try {
       const data = await request.formData();
       const hello = data.get('hello') as string;
       console.log({ actions: 'yes', hello });
       if (hello) {
-        promises.push(platform?.env?.GIFTS.put('hello', hello));
+        await platform?.env?.GIFTS.put('hello', hello);
       }
-    } finally {
-      await Promise.all(promises);
     }
-  },
 };

@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --host ::1",
+    "--": "should I use --ext js,ts,svelte,html,png,gif,jpg,jpeg ?",
+    "watch": "nodemon --ext '*' --watch src --exec \"vite build --minify false --sourcemap true\"",
+    "dev": "wrangler pages dev .svelte-kit/cloudflare --kv GIFTS --live-reload",
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
@@ -23,6 +25,7 @@
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.8.3",
     "prettier-plugin-svelte": "^2.9.0",
     "svelte": "^3.55.1",

@@ -3,6 +3,7 @@ import { redirect } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 
 export const load: PageServerLoad = async ({ platform }) => {
+  console.log({platform});
   let hello = await platform?.env?.GIFTS.get('hello');
   if (!hello) {
     await platform?.env?.GIFTS.put('hello', 'world');
@@ -10,7 +11,6 @@ export const load: PageServerLoad = async ({ platform }) => {
   }
   return {
     hello: hello ?? '',
-    // platform,
   };
 };
 

@@ -1,7 +1,7 @@
 import { Miniflare, Log, LogLevel } from 'miniflare';
 import { dev } from '$app/environment';
 
-export const fallBackPlatformToMiniFlareInDev = async (_platform: App.Platform) => {
+export const fallBackPlatformToMiniFlareInDev = async (_platform: App.Platform | undefined) => {
   if (!dev) return _platform;
 
   if (_platform) return _platform;
@@ -25,7 +25,6 @@ export const fallBackPlatformToMiniFlareInDev = async (_platform: App.Platform) 
   });
 
   const env = await mf.getBindings();
-  // @ts-expect-error i don't know why
-  const platform: App.Platform = { env };
+  const platform = { env } as App.Platform;
   return platform;
 };
